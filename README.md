@@ -2,20 +2,17 @@
 
 Gitlab ships mattermost in the omnibus package without backup script.
 
-This repository contains a simple script to backup the mattermost data and uploads it to s3.
-
+This repository contains a simple script to backup the mattermost data
 ## Prerequisites
 
-The AWS cli must be installed for user root. See [official install guide](http://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux.html).
-
-run `aws configure` or set the environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in config file. 
+This fork doesn't use AWS
 
 ## Installation
 
 Clone the repository and create a `backup_mattermost.conf` file.
 
 ```bash
-git clone https://github.com/gitlab-tools/gitlab-mattermost-backup.git && cd gitlab-mattermost-backup && cp backup_mattermost.conf.sample backup_mattermost.conf
+git clone https://github.com/ideechaniz/gitlab-mattermost-backup.git && cd gitlab-mattermost-backup && cp backup_mattermost.conf.sample backup_mattermost.conf
 ```
 
 ## Configuration
