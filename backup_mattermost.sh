@@ -20,7 +20,7 @@ mkdir -p $gitlabBackupDir/mattermost/data
 echo backup data
 cp -R $mattermostDir/* $gitlabBackupDir/mattermost/data
 # backup postgres
-su - mattermost -c "/opt/gitlab/embedded/bin/pg_dump -U gitlab_mattermost -h /var/opt/gitlab/postgresql -p 5432 mattermost_production" > $gitlabBackupDir/mattermost/mattermost_production_backup.sql
+su - gitlab-psql -c "/opt/gitlab/embedded/bin/pg_dump -U gitlab-psql -h /var/opt/gitlab/postgresql -p 5432 mattermost_production" > $gitlabBackupDir/mattermost/mattermost_production_backup.sql
 
 echo package and cleanup
 backupfile=$(date +%s_%Y_%m_%d)_mattermost_backup.tar.gz
