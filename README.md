@@ -48,6 +48,6 @@ Install gitlab omnibus and execute following commands:
 ```bash
 tar -zxvf %s_%Y_%m_%d_mattermost.tar.gz -C /tmp/
 mv /tmp/mattermost/data/* /var/opt/gitlab/mattermost/
-su - mattermost -c "/opt/gitlab/embedded/bin/psql -U gitlab_mattermost -h /var/opt/gitlab/postgresql -p 5432 mattermost_production" < /tmp/mattermost/mattermost_production_backup.sql
+su - gitlab-psql -c "/opt/gitlab/embedded/bin/psql -U gitlab-psql -h /var/opt/gitlab/postgresql -p 5432 mattermost_production" < /tmp/mattermost/mattermost_production_backup.sql
 rm -rf /tmp/mattermost
 ```
